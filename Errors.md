@@ -12,7 +12,7 @@ $$
 Assume we have an approximate $\hat y$. Then
 - Forward error: $|\hat y-y|$, hard to estimate if true value $y$ cannot be approximate.
 - Backward error: $|\hat b-b|=|A\hat y-b|$, ==easy to estimate==. 
-![[Pasted image 20230914162441.jpg]]
+![[./Pasted image 20230914162441.jpg|Pasted image 20230914162441]]
 ## Sensitivity and Conditioning 
 Condition number:
 $$
