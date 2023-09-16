@@ -1,4 +1,4 @@
-Basic models in [[Bayesian Statistics]]
+Basic models in [[./Bayesian Statistics|Bayesian Statistics]]
 ## Bayesian Estimators
 - *MAP*: The maximum a posterior estimator is the posterior mode of $\theta|y$, i.e, $\hat\theta_{MAP}=\arg\max_{\theta}f(\theta |x)$.
 - The posterior mean is $\hat\theta =\mathbb E[\theta |y]$.
@@ -8,7 +8,7 @@ Basic models in [[Bayesian Statistics]]
 - *Highest posterior density (HPD) region*: $s(y)$ is a $1-\alpha$ HPD if
 	- $\mathbb P(\theta\in s(y)|y)=1-\alpha$
 	- If $\theta_{a}\in s(y)$ and $\theta_{b}\not\in s(y)$, then $p(\theta_{a}|y)>p(\theta_{b}|y)$.
-	![[Pasted image 20230915165417.png]]
+	![[./Pasted image 20230915165417.png|Pasted image 20230915165417]]
 ## Conjugate Prior 
 If $\mathcal F$ is a class of sampling distributions $p(y|\theta)$, and $\mathcal P$ is a class of prior distributions for $\theta$, then $\mathcal P$ is conjugate for $\mathcal F$ if
 $$
