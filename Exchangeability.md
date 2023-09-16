@@ -1,4 +1,4 @@
-A basic concept in [[Bayesian Statistics]]
+A basic concept in [[./Bayesian Statistics|Bayesian Statistics]]
 #### Exchangeable
 Let $p(y_1,…,y_n)$ be the joint density of $Y_1,…,Y_n$. If $p(y_1,…,y_n)=p(y_{\pi_1},…,y_{\pi_n})$ for all permutations $\pi$ of $\{1,…,n\}$, then $Y_1,…,Y_n$ are exchangeable.
 #### de Finetti’s Theorem
