@@ -1,0 +1,3 @@
+Bagging is a kind of [[Ensemble Learning]], which is designed to improve the stability and accuracy. It reduces the **variance** of the prediction while retaining the bias.
+Given a standard traning set $D$, bagging generates $m$ new training sets $D_i$ by sampling from $D$ uniformly and with replacement. Sampling with replacement ensures each bootstrap is independent from its peers. Then, $m$ models are fitted using the above $m$ bootstrap samples and combined by averaging the output (for regression) or voting (for) classification.![[Pasted image 20230913151401.png]]
+After bagging, $m$ weak learners are combined into a strong learner.
