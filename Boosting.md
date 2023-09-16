@@ -1,4 +1,4 @@
-Boosting is a kind of [[Ensemble Learning]], which iteratively and greedily add weak learners to the ensemble. 
+Boosting is a kind of [[./Ensemble Learning|Ensemble Learning]], which iteratively and greedily add weak learners to the ensemble. 
 A boosting model can be a weighted sum of weak learners:
 $$
 H_T(x)=\sum^{T}_{t=1}\alpha_th_t(x)
@@ -25,7 +25,7 @@ h&={\arg\min}_h\sum^{n}_{i=1}\frac{\partial\mathcal{L}}{\partial[H(x_{i})]} h(x_
 $$
 The term $\frac{\partial\mathcal{L}}{\partial[H(x_{i})]}$ indicates the importance of the observed data $x_i$. For Gradient boosting, a common loss function is absolute loss $l(y,H(x))=(y-H(x))^2$. With this loss function, data that brings more error needs linearly more attention when fitting the new learner $h$.
 If we let $d_{i=} -\frac{\partial\mathcal{L}}{\partial[H(x_{i})]}$, the vector $\boldsymbol{d}$ can also be viewed as a descent direction. Fitting $h$ is the process to find the vector $(h(x_1),...,h(x_n))$ nearest to the direction. I other words, $h$ is learning to predict $d$.
-![[Pasted image 20230913203232.png]]
+![[./Pasted image 20230913203232.png|Pasted image 20230913203232]]
 ## AdaBoost (Adaptive Boosting)
 AdaBoost uses the exponential loss
 $$
@@ -48,7 +48,7 @@ $$
 \alpha = \frac{1}{2}\ln \frac{1-\epsilon}{\epsilon}
 $$
 where $\epsilon=\sum_{y_i\neq h(x_i)}w_i$. An intuitive interpretation is that if the best $h$ even makes mistakes weighting more than a half, the ensemble will take it away by subtracting $h$ from itself.
-![[Pasted image 20230914162734.png]]
+![[./Pasted image 20230914162734.png|Pasted image 20230914162734]]
 AdaBoost is mainly designed for binary classification and usually is utilized to boost the performance of decision tree.
 ## Summary
 reduces bias and a little variance. However, boosting too much will eventually increase variance. 
