@@ -36,4 +36,3 @@ $$
 #### Poisson distribution   
 >If $Y\sim Poi(\theta)$, then  
 >$$\mathbb P(Y=y|\theta)= \frac{\theta^ye^{-\theta}}{y!}$$  
-  
