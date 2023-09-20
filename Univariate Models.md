@@ -16,10 +16,11 @@ p(\theta |y)\in\mathcal P \text{ for all }p(y|\theta )\in\mathcal F\text{ and }p
 $$  
 ## Binomial Model  
 A Bayesian model of the process of repeated Bernoulli experiments. The conjugate prior distribution for the binomial model is Beta distribution.  
-#### Beta distribution  
+#### Prior: Beta distribution  
 >Suppose $\theta\sim Beta(\alpha, \beta)$, The PDF of $\theta$ is  
 > $$p(\theta)= \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\theta^ {\alpha-1}(1-\theta)^{\beta-1}$$  
 >for $0\le\theta\le 1$.  
+
 - $\mathbb E[\theta ]= \frac{\alpha}{\alpha+\beta}$  
 - $Var[\theta ]= \frac{\alpha\beta}{(\alpha+\beta+1)(\alpha+\beta)^{2}}$  
 - $Mode[\theta]= \frac{\alpha-1}{\alpha+\beta-2}$  
@@ -35,4 +36,33 @@ $$
 ## Poisson Model   
 #### Poisson distribution   
 >If $Y\sim Poi(\theta)$, then  
->$$\mathbb P(Y=y|\theta)= \frac{\theta^ye^{-\theta}}{y!}$$  
+>$$\mathbb P(Y=y|\theta)= \frac{\theta^ye^{-\theta}}{y!}$$
+
+#### Posterior 
+For $y_{1},...,y_{n}|\theta \sim \text{Poisson}(\theta)$, the joint density of $(y_{1},...,y_{n})$ given $\theta$ is
+$$
+p(y_1,...,y_n|\theta)=\frac{\theta^{\sum y_i}e^{-n\theta}}{\prod y_{i}!}
+$$
+Then, the posterior will be
+$$
+\begin{align*}
+p(\theta |y_{1},...,y_{n})&\propto p(y_1,...,y_n|\theta)p(\theta)\\
+&\propto p(\theta ) \theta^{n\bar y}e^{-n\theta}\\
+\end{align*}
+$$
+So, the prior should be a Gamma distribution.
+#### Prior: Gamma Distribution 
+>If $\theta \sim Gamma(a,b)$, the PDF of $\theta$ is
+>$$p(\theta) =\frac{b^{a}}{\Gamma(a)}\theta^{a-1}e^{-b\theta}$$
+>for $\theta>0$.
+
+- $\mathbb E[\theta ]= \frac{a}{b}$  
+- $Var[\theta ]= \frac{a}{b^{2}}$  
+- $Mode[\theta]= \frac{a-1}{b}$ if $a>1$ else $0$ 
+If the prior is $Gamma(a,b)$, then the posterior will be
+$$
+\begin{align*}
+p(\theta |y_{1},...,y_{n}) &\propto p(\theta ) \theta^{n\bar y}e^{-n\theta}\\
+&=Gamma(a+n\bar y,b+n)
+\end{align*}
+$$
